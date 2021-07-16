@@ -47,7 +47,8 @@ body {
     }
     img {
       width: 100%;
-      filter: grayscale(0.1) brightness(0.9);
+      border-radius: 20px;
+      filter: grayscale(0.1) brightnes`s(0.9);
     }
   }
 }
