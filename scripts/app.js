@@ -109,7 +109,7 @@ function swipedetect(el) {
     elapsedTime = new Date().getTime() - startTime // get time elapsed
     if (elapsedTime <= allowedTime) { // first condition for awipe met
       if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) { // 2nd condition for horizontal swipe met
-        (distX < 0) ? arrowClicked('left') : arrowClicked('right'); // if dist traveled is negative, it indicates left swipe
+        (distX < 0) ? arrowClicked('right') : arrowClicked('left'); // if dist traveled is negative, it indicates left swipe
       }
       // else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) { // 2nd condition for vertical swipe met
       //   swipedir = (distY < 0) ? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
