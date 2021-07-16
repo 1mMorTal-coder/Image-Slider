@@ -39,11 +39,11 @@ body {
   position: relative;
   &_img {
     width: 600%;
-    transition: transform 0.8s ease-in-out;
+    transition: transform 1s ease-in-out;
     display: inline-flex;
     > * {
       flex: 1 1 100%;
-      margin: 0 5px;
+      margin: 0 10px 0px 0px;
     }
     img {
       width: 100%;
