@@ -22,6 +22,7 @@ body {
   color: #fff;
   font-family: Georgia, "Times New Roman", Times, serif;
   @include display-flex;
+  align-items: flex-start;
 }
 
 .content {
@@ -104,10 +105,6 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-  body {
-    height: 10vh;
-    min-height: 90vh;
-  }
   .container {
     width: 100%;
   }
@@ -116,8 +113,8 @@ body {
   }
   :root {
     --arrow_size: 2.5rem;
-    --toggle-width: 80px;
-    --toggle-height: 8px;
+    --toggle-width: 100px;
+    --toggle-height: 12px;
   }
   .content {
     height: 80%;
