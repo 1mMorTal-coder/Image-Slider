@@ -14,11 +14,9 @@ circle.forEach(element => {
     start = 0;
   })
 });
-
 let leftArrow = document.getElementsByClassName('left_arrow')[0];
 let rightArrow = document.getElementsByClassName('right_arrow')[0];
 let imageContainer = document.getElementsByClassName('container_img')[0];
-
 
 let containerWidth = document.getElementsByClassName('container')[0].offsetWidth;
 rightArrow.addEventListener('click', arrowClicked);
@@ -64,62 +62,4 @@ function step(timestamp) {
   }
   requestId = window.requestAnimationFrame(step)
 }
-
 requestId = window.requestAnimationFrame(step);
-
-
-
-
-
-
-
-// // credit: http://www.javascriptkit.com/javatutors/touchevents2.shtml
-// function swipedetect(el) {
-
-//   var imageElement = el,
-//     swipedir,
-//     startX,
-//     startY,
-//     distX,
-//     distY,
-//     threshold = 100, //required min distance traveled to be considered swipe
-//     restraint = 100, // maximum distance allowed at the same time in perpendicular direction
-//     allowedTime = 200, // maximum time allowed to travel that distance
-//     elapsedTime,
-//     startTime
-
-//   imageElement.addEventListener('touchstart', function (e) {
-//     var touchobj = e.changedTouches[0]
-
-//     dist = 0
-//     startX = touchobj.pageX
-//     startY = touchobj.pageY
-//     startTime = new Date().getTime() // record time when finger first makes contact with surface
-//     e.preventDefault()
-//   }, false)
-
-//   imageElement.addEventListener('touchmove', function (e) {
-//     e.preventDefault() // prevent scrolling when inside DIV
-//   }, false)
-
-//   imageElement.addEventListener('touchend', function (e) {
-//     var touchobj = e.changedTouches[0]
-//     distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-//     distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-//     elapsedTime = new Date().getTime() - startTime // get time elapsed
-//     if (elapsedTime <= allowedTime) { // first condition for awipe met
-//       if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) { // 2nd condition for horizontal swipe met
-//         (distX < 0) ? arrowClicked('right') : arrowClicked('left'); // if dist traveled is negative, it indicates left swipe
-//       }
-//       // else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) { // 2nd condition for vertical swipe met
-//       //   swipedir = (distY < 0) ? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
-//       // }
-//     }
-//     e.preventDefault()
-//   }, false)
-// }
-
-// //USAGE:
-
-// var el = document.getElementById('swipezone');
-// swipedetect(imageContainer);
