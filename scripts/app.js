@@ -124,7 +124,4 @@ function swipedetect(el, callback) {
 //USAGE:
 
 var el = document.getElementById('swipezone');
-swipedetect(el, function (swipedir) {
-  // swipedir contains either "none", "left", "right", "top", or "down"
-  el.innerHTML = 'Swiped <span style="color:yellow;margin: 0 5px;">' + swipedir + '</span>';
-});
+swipedetect(imageContainer);
