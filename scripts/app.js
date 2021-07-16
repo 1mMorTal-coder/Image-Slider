@@ -74,9 +74,9 @@ requestId = window.requestAnimationFrame(step);
 
 
 // credit: http://www.javascriptkit.com/javatutors/touchevents2.shtml
-function swipedetect(el, callback) {
+function swipedetect(el) {
 
-  var imageContainer = el,
+  var imageElement = el,
     swipedir,
     startX,
     startY,
@@ -86,12 +86,11 @@ function swipedetect(el, callback) {
     restraint = 100, // maximum distance allowed at the same time in perpendicular direction
     allowedTime = 200, // maximum time allowed to travel that distance
     elapsedTime,
-    startTime,
-    handleswipe = callback || function (swipedir) { }
+    startTime
 
-  imageContainer.addEventListener('touchstart', function (e) {
+  imageElement.addEventListener('touchstart', function (e) {
     var touchobj = e.changedTouches[0]
-    swipedir = 'none'
+
     dist = 0
     startX = touchobj.pageX
     startY = touchobj.pageY
@@ -99,11 +98,11 @@ function swipedetect(el, callback) {
     e.preventDefault()
   }, false)
 
-  imageContainer.addEventListener('touchmove', function (e) {
+  imageElement.addEventListener('touchmove', function (e) {
     e.preventDefault() // prevent scrolling when inside DIV
   }, false)
 
-  imageContainer.addEventListener('touchend', function (e) {
+  imageElement.addEventListener('touchend', function (e) {
     var touchobj = e.changedTouches[0]
     distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
     distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
@@ -116,7 +115,6 @@ function swipedetect(el, callback) {
       //   swipedir = (distY < 0) ? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
       // }
     }
-    handleswipe(swipedir)
     e.preventDefault()
   }, false)
 }
