@@ -63,3 +63,10 @@ function step(timestamp) {
   requestId = window.requestAnimationFrame(step)
 }
 requestId = window.requestAnimationFrame(step);
+
+document.addEventListener('keyup', (e) => {
+  if (e.key === 'ArrowRight')
+    arrowClicked('right');
+  else if (e.key === 'ArrowLeft')
+    arrowClicked('left');
+})
